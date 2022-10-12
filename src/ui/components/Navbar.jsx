@@ -17,7 +17,7 @@ export const Navbar = () => {
                 className="navbar-brand"
                 to="/"
             >
-                Asociaciones
+                Character List
             </Link>
 
             <div className="navbar-collapse">
@@ -47,7 +47,7 @@ export const Navbar = () => {
                 </div>
             </div>
 
-            <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
+            {/* <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
                 <ul className="navbar-nav ml-auto">
                     <span 
                         className="nav-item nav-link text-primary">
@@ -60,7 +60,7 @@ export const Navbar = () => {
                         Logout
                     </button>
                 </ul>
-            </div>
+            </div> */}
         </nav>
     )
 }
