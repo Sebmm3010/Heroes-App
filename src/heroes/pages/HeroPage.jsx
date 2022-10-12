@@ -1,29 +1,13 @@
-import { useMemo } from "react";
-import { Navigate, useNavigate, useParams } from "react-router-dom"
-import { getHeroById } from "../helpers";
+import { Navigate, useParams } from "react-router-dom"
+import { usePage } from "../hooks";
 
 
 export const HeroPage = () => {
 
-    const navigate = useNavigate();
-
     const { id } = useParams();
-    const hero = useMemo(()=>getHeroById(id), [id]);
-    let color='';
-    if (hero.publisher === 'DC Comics'){
-        color ='btn btn-outline-primary'
-    }else{
-        color = 'btn btn-outline-danger';
-    }
-
-    const onNavigateBack = (publi) => {
-        publi === 'DC Comics' ? 
-        navigate('/dc')
-        : navigate('/marvel');
-    }
-
+    const { hero, onNavigateBack, changeColor }= usePage(id);
     if (!hero) {
-        return <Navigate to="/marvel" state={{ aler: true }} />
+        return <Navigate to="/marvel" state={{ alert: true }} />
     }
     return (
         <div className="row mt-5">
@@ -46,7 +30,7 @@ export const HeroPage = () => {
                 <p>{hero.characters}</p>
 
                 <button
-                    className={color}
+                    className={changeColor(hero.publisher)}
                     onClick={() => onNavigateBack(hero.publisher)}
                 >
                     {hero.publisher}
