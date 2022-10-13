@@ -1,8 +1,17 @@
-import { loginL } from '../helpers';
+import { useLocation } from 'react-router-dom';
+import { alert, loginL } from '../helpers';
 
 
 export const Login = () => {
 
+  const location=useLocation();
+  const payload = {
+    icon: 'error',
+    title: 'Error: 401',
+    text: 'Porfavor registrece antes de entrar'
+  }
+  alert(location.state, payload);
+  
   const { onLogin }= loginL();
 
   return (

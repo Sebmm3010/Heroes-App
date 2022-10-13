@@ -49,7 +49,7 @@ export const SearchPage = () => {
               value={searchText}
               onChange={onInputChange}
             />
-            <button className="btnc btn btn-outline-primary animate__animated">
+            <button className="btnc hvr-shrink btn btn-outline-primary animate__animated">
               <SearchBtn />
             </button>
           </form>
