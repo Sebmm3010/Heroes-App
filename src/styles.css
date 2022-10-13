@@ -13,6 +13,7 @@ body {
     display: flex;
 }
 
-.btnc:hover{
-    animation-name: pulse;
+.btnc:active{
+    animation-name: bounceIn;
+    
 }

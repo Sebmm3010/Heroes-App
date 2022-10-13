@@ -30,7 +30,7 @@ export const HeroPage = () => {
                 <p>{hero.characters}</p>
 
                 <button
-                    className={changeColor(hero.publisher)}
+                    className={`btnc animate__animated ${changeColor(hero.publisher) }`}
                     onClick={() => onNavigateBack(hero.publisher)}
                 >
                     {hero.publisher}
